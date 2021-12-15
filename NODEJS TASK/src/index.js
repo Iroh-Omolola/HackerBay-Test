@@ -1,7 +1,8 @@
 import express from 'express';
 import cors from 'cors';
-
-import AuthRoute from './route/auth.js'
+import AuthRoute from './route/auth.js';
+import JsonPatchRoute from './route/jsonPatchFeature.js';
+import ImageRoute from './route/thumbnailFeature.js';
 
 const app = express();
 
@@ -20,5 +21,7 @@ app.get('/', (req, res) => {
 
 
 app.use('/api/v1/auth', AuthRoute);
+app.use('/api/v1/json-patch', JsonPatchRoute);
+app.use('/api/v1/thumbnail', ImageRoute);
 
 export default app
