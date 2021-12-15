@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>index.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "src\\index.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>index.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> express <span class="hljs-keyword">from</span> <span class="hljs-string">'express'</span>;
+<span class="hljs-keyword">import</span> cors <span class="hljs-keyword">from</span> <span class="hljs-string">'cors'</span>;
+<span class="hljs-keyword">import</span> AuthRoute <span class="hljs-keyword">from</span> <span class="hljs-string">'./route/auth.js'</span>;
+<span class="hljs-keyword">import</span> JsonPatchRoute <span class="hljs-keyword">from</span> <span class="hljs-string">'./route/jsonPatchFeature.js'</span>;
+<span class="hljs-keyword">import</span> ImageRoute <span class="hljs-keyword">from</span> <span class="hljs-string">'./route/thumbnailFeature.js'</span>;
+
+<span class="hljs-keyword">const</span> app = express();
+
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ <span class="hljs-attr">extended</span>: <span class="hljs-literal">true</span> }));
+
+
+
+app.get(<span class="hljs-string">'/'</span>, (req, res) =&gt; {
+  res.json({
+    <span class="hljs-attr">status</span>: <span class="hljs-string">'success'</span>,
+    <span class="hljs-attr">message</span>: <span class="hljs-string">'hello world'</span>,
+  });
+});
+
+
+app.use(<span class="hljs-string">'/api/v1/auth'</span>, AuthRoute);
+app.use(<span class="hljs-string">'/api/v1/json-patch'</span>, JsonPatchRoute);
+app.use(<span class="hljs-string">'/api/v1/thumbnail'</span>, ImageRoute);
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> app
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

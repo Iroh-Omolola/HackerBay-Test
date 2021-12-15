@@ -34,8 +34,8 @@ it('Should upload image', async()=> {
       .patch('/api/v1/json-patch/:id')
       .set('Authorization', '')
       .send({
-       "imageUrl":"femil.jpg"
-    })
+        "imageUrl":"https://thumbs.dreamstime.com/b/spring-flowers-blue-crocuses-drops-water-backgro-background-tracks-rain-113784722.jpg"
+     })
       .end((err, res) => {
         expect(res.statusCode).to.equal(401)  
       })

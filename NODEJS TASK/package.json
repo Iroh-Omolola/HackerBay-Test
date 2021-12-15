@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node ./src/server.js",
     "test": "nodemon ./node_modules/mocha/bin/_mocha  --timeout 10000",
-    "dev": "nodemon ./src/server.js"
+    "dev": "nodemon ./src/server.js",
+    "lint": "./node_modules/.bin/eslint --init"
   },
   "keywords": [],
   "author": "Iroh",
@@ -32,6 +33,7 @@
     "validator": "^13.7.0"
   },
   "devDependencies": {
+    "eslint": "^8.4.1",
     "mocha": "^9.1.3"
   }
 }

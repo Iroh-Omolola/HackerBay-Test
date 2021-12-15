@@ -1,0 +1,16 @@
+# Base image
+FROM node:12
+
+# Working directory
+WORKDIR /app
+
+# Copy the files
+COPY ["package.json", "package-lock.json", "./"]
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 8000
+
+ENTRYPOINT ["npm", "start"]
